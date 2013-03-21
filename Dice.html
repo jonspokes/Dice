@@ -1,0 +1,47 @@
+<html>
+click here to
+<a href='javascript:rolldice()'>roll</a>
+<div id=dice>here</div>
+<script>
+//alert('you rolled ' + rand());
+//alert(getFace(rand()));
+function rand()
+{
+  return Math.floor(Math.random() * 6) + 1;
+}
+function rolldice()
+{
+  //alert(document.getElementById('dice').innerHTML);
+  
+  for(var i=1;i<10;i++)
+  {
+    //alert('waasup'+ i);  
+    setTimeout(refreshPage,100*i);
+     
+  }
+}
+
+function refreshPage()
+{
+  //alert(document.getElementById('dice').innerHTML);
+  document.getElementById('dice').innerHTML = getFace(rand());
+  //this.location=this.location;
+}
+function getFace(i)
+{
+  var arr = [1,2,3,4,5,6];
+  var dce = [
+    '</br>&nbsp;o',
+    'o</br>&nbsp;o',
+    'o</br>&nbsp;o</br>&nbsp;&nbsp;o',
+    'o o</br>o&nbsp;o',
+    'o&nbsp;&nbsp;&nbsp;o</br>&nbsp;&nbsp;o</br>o&nbsp;&nbsp;&nbsp;o',
+    'o&nbsp;o</br>o&nbsp;o</br>o&nbsp;o'
+    ]
+  return dce[i-1];
+}
+
+
+</script>
+
+</html>
